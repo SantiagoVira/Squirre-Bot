@@ -4,11 +4,11 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "$";
 
-//Prepare for commands
+// Prepare for commands
 const fs = require("fs");
 client.commands = new Discord.Collection();
 
-//Get all commands and store them
+// Get all commands and store them
 const commandFiles = fs
     .readdirSync("./commands/")
     .filter((file) => file.endsWith(".js"));
@@ -18,12 +18,12 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-//Send a message once ready
+// Send a message once ready
 client.once("ready", () => {
-    console.log("Consider thyself ready");
+    console.log("Consider thyself ready"); // Nice
 });
 
-//Go through each message and check for commands, act on commands
+// Go through each message and check for commands, act on commands
 client.on("message", (message) => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 

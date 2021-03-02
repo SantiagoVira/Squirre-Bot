@@ -1,4 +1,5 @@
 //Set up the actual bot
+const { AsyncLocalStorage } = require("async_hooks");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "$";
@@ -40,5 +41,14 @@ client.on("message", (message) => {
     });
 });
 
-//Must Be Last Line
-client.login("ODE1OTk4MDc3NTAwNTIyNTg2.YD0jbg.jajGeV9mu53Lar0PKsD724Wockk");
+const login = async () => {
+    let token = "";
+    await fs.readFile("./tokenThing.txt", "utf-8", async (err, data) => {
+        if (err) {
+            console.log(err);
+        }
+        token = data.toString();
+        client.login(token);
+    });
+};
+login();

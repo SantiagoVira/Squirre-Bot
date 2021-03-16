@@ -13,6 +13,7 @@ module.exports = {
     name: "status",
     description: "description",
     execute(message, args, Discord) {
+        if (message.author.bot) return;
         //Do things
         read((rawData) => {
             const data = JSON.parse(rawData);

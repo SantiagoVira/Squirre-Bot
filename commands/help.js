@@ -2,6 +2,7 @@ module.exports = {
     name: "help",
     description: "help",
     execute(message, args, Discord) {
+        if (message.author.bot) return;
         //Do things
         const embed = new Discord.MessageEmbed()
             .setColor(Math.floor(Math.random() * 16777215).toString(16))

@@ -25,6 +25,15 @@ client.once("ready", () => {
 
 //Go through each message and check for commands, act on commands
 client.on("message", (message) => {
+    // if (
+    //     message.author.bot &&
+    //     message.embeds[0] &&
+    //     message.embeds[0].title == "Game Time"
+    // ) {
+    //     client.commands
+    //         .get("game")
+    //         .execute(message, ["Don't Make Boxes"], Discord);
+    // }
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content

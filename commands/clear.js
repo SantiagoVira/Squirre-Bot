@@ -11,6 +11,7 @@ module.exports = {
     name: "clear",
     description: "description",
     execute(message, args, Discord) {
+        if (message.author.bot) return;
         //Do things
         write({});
         message.reply("done!");

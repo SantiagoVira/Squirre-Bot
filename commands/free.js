@@ -33,6 +33,7 @@ module.exports = {
     name: "free",
     description: "when r u free",
     execute(message, args, Discord) {
+        if (message.author.bot) return;
         //Do things
         if (args[0]) {
             let quit = false;

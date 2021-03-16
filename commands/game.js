@@ -329,8 +329,8 @@ module.exports = {
     description: "play a game",
     execute(message, args, Discord) {
         const runTheFunction = async () => {
-            let level = 3; //1;
-            const boxAmount = 1; //level * 2 + 1;
+            let level = 1;
+            const boxAmount = level * 2 + 1;
             const width = 10;
             const height = 8;
 
